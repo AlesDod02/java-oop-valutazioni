@@ -1,5 +1,6 @@
 package org.lessons.java.valutazioni;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 
@@ -32,7 +33,10 @@ public class Corso {
 
 
         }
-        System.out.println("la percentuale di studenti promossi è:"+((promossi.size()*100.0/studentiTot.size())));
+        double perPromossi =(promossi.size()*100.0/studentiTot.size());
+        DecimalFormat df = new DecimalFormat("#.##");
+        String perPromossiFormatted = df.format(perPromossi);
+        System.out.println("la percentuale di studenti promossi è:"+ perPromossiFormatted + "%");
         System.out.println("ecco gli studenti promossi: ");
         for (Studente studentepromosso : promossi){
             System.out.println(studentepromosso);

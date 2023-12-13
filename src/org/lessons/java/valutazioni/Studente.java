@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Studente {
     private  int id;
-    private static int counter = 0;
+    private static int counter = 1;
     private int absencesPer;
 
     private double averageGrades;
