@@ -19,6 +19,7 @@ public class Main {
             System.out.println(studente);
 
         }
+        //creo un esempio di un corso
 
         Corso corsoletteratura = new Corso();
         corsoletteratura.getPercStudentiPromossi(students);
