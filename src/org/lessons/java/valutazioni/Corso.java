@@ -4,27 +4,27 @@ import java.util.ArrayList;
 
 
 public class Corso {
-    private static ArrayList<Studente>gianni= new ArrayList<>();
+    private ArrayList<Studente>studentiTot= new ArrayList<>();
 
 
-    public static void getStudents(ArrayList<Studente>gianni){
-        for (Studente studente: gianni){
+    public void getStudents(ArrayList<Studente>studentiTot){
+        for (Studente studente: studentiTot){
             System.out.println(studente);
         }
 
 
     }
-    public static void removeStudent(ArrayList<Studente>gianni,int ID){
-        gianni.remove(ID);
+    public void removeStudent(ArrayList<Studente>studentiTot,int ID){
+        studentiTot.remove(ID);
 
     }
-    public static void addStudent(ArrayList<Studente>gianni,Studente nuovoStudente){
-        gianni.remove(nuovoStudente);
+    public void addStudent(ArrayList<Studente>studentiTot,Studente nuovoStudente){
+        studentiTot.remove(nuovoStudente);
 
     }
-    public static  void getPercStudentiPromossi (ArrayList<Studente>gianni){
+    public  void getPercStudentiPromossi (ArrayList<Studente>studentiTot){
         ArrayList<Studente>promossi= new ArrayList<>();
-        for (Studente studente:gianni){
+        for (Studente studente:studentiTot){
             if (studente.getStudentResult()){
                 promossi.add(studente);
 
@@ -32,7 +32,11 @@ public class Corso {
 
 
         }
-        System.out.println("la percentuale di studenti promossi è:"+(promossi.size()*100.0/(promossi.size()+gianni.size())));
+        System.out.println("la percentuale di studenti promossi è:"+((promossi.size()*100.0/studentiTot.size())));
+        System.out.println("ecco gli studenti promossi: ");
+        for (Studente studentepromosso : promossi){
+            System.out.println(studentepromosso);
+        }
 
     }
 

@@ -9,7 +9,7 @@ public class Main {
         Random random= new Random();
         int numberofStudents = random.nextInt(10,20);
 
-        for (int i = 0; i <3 ; i++) {
+        for (int i = 0; i <numberofStudents ; i++) {
 
             int assenze= random.nextInt(0,100);
             double media = random.nextInt(0,5);
@@ -19,7 +19,9 @@ public class Main {
             System.out.println(studente);
 
         }
-        Corso.getPercStudentiPromossi(students);
+
+        Corso corsoletteratura = new Corso();
+        corsoletteratura.getPercStudentiPromossi(students);
 
     }
 }
