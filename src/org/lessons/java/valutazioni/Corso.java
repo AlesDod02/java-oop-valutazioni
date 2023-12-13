@@ -2,29 +2,41 @@ package org.lessons.java.valutazioni;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Corso {
     private ArrayList<Studente>studentiTot= new ArrayList<>();
+    private ArrayList<Studente>promossi= new ArrayList<>();
 
 
-    public void getStudents(ArrayList<Studente>studentiTot){
-        for (Studente studente: studentiTot){
-            System.out.println(studente);
+
+
+
+    public List<Studente> getStudents(){
+        return studentiTot;
+    }
+   /* public void removeStudent(int ID){
+        for (int i=0; i< studentiTot.size(); i++){
+            if (ID == studentiTot.get(i).getId()){
+
+            }
         }
 
+    }*/
+   public void removeStudent(int ID){
+       studentiTot.remove(ID-1);
+   }
+    public void addStudent(Studente nuovoStudente){
+        studentiTot.add(nuovoStudente);
 
     }
-    public void removeStudent(ArrayList<Studente>studentiTot,int ID){
-        studentiTot.remove(ID);
+    public List<Studente> getElencoPromossi(){
 
+        return promossi;
     }
-    public void addStudent(ArrayList<Studente>studentiTot,Studente nuovoStudente){
-        studentiTot.remove(nuovoStudente);
+    public  double getPercStudentiPromossi (){
 
-    }
-    public  void getPercStudentiPromossi (ArrayList<Studente>studentiTot){
-        ArrayList<Studente>promossi= new ArrayList<>();
         for (Studente studente:studentiTot){
             if (studente.getStudentResult()){
                 promossi.add(studente);
@@ -34,13 +46,8 @@ public class Corso {
 
         }
         double perPromossi =(promossi.size()*100.0/studentiTot.size());
-        DecimalFormat df = new DecimalFormat("#.##");
-        String perPromossiFormatted = df.format(perPromossi);
-        System.out.println("la percentuale di studenti promossi è:"+ perPromossiFormatted + "%");
-        System.out.println("ecco gli studenti promossi: ");
-        for (Studente studentepromosso : promossi){
-            System.out.println(studentepromosso);
-        }
+
+        return perPromossi;
 
     }
 
